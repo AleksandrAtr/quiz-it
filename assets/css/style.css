@@ -33,6 +33,7 @@ font-family: 'Roboto Slab', serif;
 
   button {
     font-family: 'Roboto Slab', serif;
+    font-size: 1.1em;
   }
   
   .intro {
@@ -44,6 +45,7 @@ font-family: 'Roboto Slab', serif;
   }
 
   .quiz-container {
+    display: none;
     background-color: #efefef;
   }
 
@@ -70,4 +72,17 @@ font-family: 'Roboto Slab', serif;
     background-color: #efefef;
     color: black;
     text-align: center;
+  }
+
+  .menu-btn {
+    padding: 10px;
+    display: block;
+    margin: 15px auto;
+    text-align: left;
+    border: solid 1px;
+    border-radius: 5px;
+  }
+
+  .menu-btn:hover {
+    background-color: white;
   }
