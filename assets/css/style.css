@@ -1,0 +1,49 @@
+/* --------------------------------------------Imported Google fonts */
+/* 
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto Slab', serif; 
+*/
+
+/* --------------------------------------------Reset html styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', helvetica, sans-serif;
+  }
+
+  main {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.25rem;
+  }
+
+  button {
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .intro {
+    background-color: #efefef;
+    margin-top: 2em;
+    text-align: left;
+    padding: 10px;
+    margin: 10px 0;
+
+  }
+
+  #cdm-answers {
+    display: block;
+    align-items: center;
+    /* justify-content: center; */
+  }
+
+
+  .btn {
+    
+
+    width: 80%;
+  }
