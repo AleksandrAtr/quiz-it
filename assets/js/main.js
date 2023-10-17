@@ -9,8 +9,8 @@ let quizQuestion = document.getElementById('cdm-question');
 let quizAnswers = document.getElementById('cdm-answers');
 const answerButtons = document.getElementsByClassName('btn');
 
-let questionIndex = 0;
-let score = 0;
+let questionIndex;
+let score;
 
 menuButton.addEventListener('click', startQuiz);
 
@@ -53,55 +53,54 @@ function applyEventListener() {
 }
 
 function checkAnswer(event) {
-    // declare selected button with event taget value
+    // disable answer buttons 
+    const array = Array.prototype.slice.call(answerButtons);
+    array.forEach(button => {button.disabled = true;})
+
     const selectedBtn = event.target;
-    const correctAnswer = selectedBtn.getAttribute('correct') === 'true';
-    if (correctAnswer) {
-        // selectedBtn.classList.add('correct');
+    const isCorrectAnswer = selectedBtn.getAttribute('correct') === 'true';
+    
+    if (isCorrectAnswer) {
+        selectedBtn.classList.add('correct');
         score += 1;
     } else {
         selectedBtn.classList.add('incorrect');
+        quizAnswers.querySelector('[correct="true"]').classList.add('correct');
     }
 
-    const array = Array.prototype.slice.call(answerButtons);
-    array.forEach(button => {
-        if (button.getAttribute('correct') === 'true') {
-            button.classList.add('correct');
-        }
-        button.disabled = true;
-    })
     questionIndex += 1;
-    // console.log(questionIndex);
     menuButton.style.display = 'block';
-    // debugger;
+
     menuButton.removeEventListener('click', startQuiz);
     menuButton.addEventListener('click', () => {handleMenuButton(next)});
 }
 
 function showResult() {
     resetQuestionContainer();
-    
-    quizAnswers.innerHTML = "Quiz completed";
+    quizAnswers.innerHTML = "Quiz completed. You scored " + score + " out of " + questionsLength;
 }
 
 function handleMenuButton(type) {
-    // you can use ternarry here
     if (type == start) {
-        // resetQuestionContainer();
         showQuestion();
         document.getElementById('cdm-quiz-container').style.display = "block";
         menuButton.innerHTML = 'Next';
     } else {
         if (questionIndex < (questionsLength)) {
             showQuestion();
-        } else { showResult()}
-        // (questionIndex < questionsLength) ? showQuestion : showResult;
+        } else { 
+            showResult()
+            menuButton.innerHTML = 'Start Again';
+            menuButton.style.display = 'block'
+            menuButton.removeEventListener('click', () => {handleMenuButton(next)})
+            menuButton.addEventListener('click', startQuiz);
+        }
     }
 }
 
-
-
 function startQuiz() {
+    questionIndex = 0;
+    score = 0;
     handleMenuButton(start);
 }
 
