@@ -90,8 +90,13 @@ font-family: 'Roboto Slab', serif;
     position: relative;
   }
 
-  .btn:hover {
+  .btn:hover:not([disabled])  {
     background-color: aquamarine;
+  }
+
+  .btn:disabled {
+    color: #000;
+    cursor:not-allowed;
   }
 
   .menu-btn {
@@ -108,6 +113,14 @@ font-family: 'Roboto Slab', serif;
     background-color: cyan;
   }
 
+
+  .correct {
+    background-color: greenyellow;
+  }
+
+  .incorrect {
+    background-color: red;
+  }
 
     /* --------------------------------------------xxx */
 
