@@ -1,21 +1,38 @@
 //import quiz questions
 import { questions } from './questions.js';
 
+
+let questionIndex;
+let score;
 const start = 'Start';
 const next = 'Next';
+const header = document.getElementById('header');
+const cdmIntro = document.getElementById('cdm-intro');
+const cdmQuizContainer = document.getElementById('cdm-quiz-container');
+const body = document.getElementById('body');
+
+
 const questionsLength = questions.length;
 let menuButton = document.getElementById('menu-btn');
 let quizQuestion = document.getElementById('cdm-question');
 let quizAnswers = document.getElementById('cdm-answers');
 const answerButtons = document.getElementsByClassName('btn');
+const quizExitButton = document.getElementById('exit-btn');
+const quizNextButton = document.getElementById('next-btn');
 
-let questionIndex;
-let score;
 
+
+quizExitButton.addEventListener('click', () => {
+    window.location.href="../index.html" 
+});
+quizNextButton.addEventListener('click', () => {
+    handleMenuButton(next);
+});
 menuButton.addEventListener('click', startQuiz);
 
+
 function resetQuestionContainer() {
-    menuButton.style.display = 'none';
+    quizNextButton.style.display = 'none';
     quizQuestion.innerHTML = "";
     quizAnswers.innerHTML = "";
 }
@@ -69,22 +86,27 @@ function checkAnswer(event) {
     }
 
     questionIndex += 1;
-    menuButton.style.display = 'block';
-
-    menuButton.removeEventListener('click', startQuiz);
-    menuButton.addEventListener('click', () => {handleMenuButton(next)});
+    // quizNextButton.disabled = false;
+    quizNextButton.style.display = 'block';
 }
 
 function showResult() {
+    quizNextButton.style.display = 'none';
     resetQuestionContainer();
     quizAnswers.innerHTML = "Quiz completed. You scored " + score + " out of " + questionsLength;
 }
 
 function handleMenuButton(type) {
+    // quizNextButton.disabled = true;
     if (type == start) {
+        header.style.display = 'none';
+        cdmIntro.style.display = 'none';
+        
         showQuestion();
-        document.getElementById('cdm-quiz-container').style.display = "block";
-        menuButton.innerHTML = 'Next';
+        cdmQuizContainer.style.display = "block";
+        body.classList.add("body-image");
+        
+
     } else {
         if (questionIndex < (questionsLength)) {
             showQuestion();
@@ -101,6 +123,7 @@ function handleMenuButton(type) {
 function startQuiz() {
     questionIndex = 0;
     score = 0;
+    quizNextButton.style.display = 'none';
     handleMenuButton(start);
 }
 
