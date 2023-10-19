@@ -41,17 +41,12 @@ h4 {
 
 .body-image {
   background-color: #004466;
-  /* background-image: url("../images/home-hero.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
-    z-index: 0; */
 }
 
 .hero-image {
   height: 250px;
   width: 100%;
-  background-image: url("../images/home-hero.jpg");
+  background-image: url("../images/home/home-hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
