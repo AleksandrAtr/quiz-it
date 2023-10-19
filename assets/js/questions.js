@@ -1,52 +1,45 @@
 export const questions = [
     {
-        question : "What's your name?",
+        question : "Under CDM 2015, who is primarily responsible for coordinating health and safety during the construction phase of a project?",
         answers : [
             {
-                answer : "Aleks",
+                answer : "Client",
                 correct : false
             },
             {
-                answer : "Serge",
+                answer : "Principal Designer",
+                correct : false
+            },
+            {
+                answer : "Designer",
+                correct : false
+            },
+            {
+                answer : "Principal Contractor",
                 correct : true
-            },
-            {
-                answer : "Max",
-                correct : false
             }
         ]
     },
     {
-        question : "What's your surname?",
+        question : "According to CDM 2015, who is responsible for compiling the health and safety file?",
         answers : [
             {
-                answer : "Mask",
+                answer : "Principal Contractor",
+                correct : false
+            }, {
+                answer : "Project Manager",
                 correct : false
             },
             {
-                answer : "Task",
+                answer : "HSE inspector",
+                correct : false
+            },
+            {
+                answer : "Principal Designer",
                 correct : true
-            },
-            {
-                answer : "Pak",
-                correct : false
             }
         ]
     }
 ]
-
-
-// function printQandAnsw() {
-//     for ( let i=0; i < questions.length; i++) {
-//         console.log(questions[i].question) 
-        
-//         for (item in questions[i].answers) {
-//             let seq = item * 1 + 1;
-//             console.log(seq + '. ' + questions[i].answers[item].answer);  
-//     }
-//     }
-// }
-
-    
 
 
