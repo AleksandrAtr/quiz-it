@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,46 +8,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Slab&display=swap" rel="stylesheet">
-    <meta name="description"
-        content="Test your construction knowledge"
+    <meta name="description" content="Test your construction knowledge"
         content="Construction Design Management, CDM 2015, CDM">
     <meta name="author" content="Aleksandr Atr">
     <title>Quiz-it | CDM</title>
 </head>
-<body>
-    <header>
-         <!-- Hero image introduction text -->
-         <section class="home-hero">
-            <h1>
-                    Construction Design Management Regulations 2015
-            </h1>
-            <p>Aleksandr Atr | 23.10.2023</p>
-        </section>
+
+<body id="body" class='testbBackground'>
+    <header id="header">
+            <div class="hero-image"></div>
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>
+                        Construction Design Management Regulations 2015
+                    </h1>
+                    <p>Aleksandr Atr | 23.10.2023</p>
+                </div>
+            </div>
     </header>
-    <main>
+    <main id="main">
         <section id="cdm-intro" class="intro">
             <h2>Test knowledge to see if a brushup is required</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi eveniet odit expedita assumenda magnam sunt tempore ratione distinctio suscipit itaque fugiat exercitationem eius, cupiditate fugit omnis! Adipisci nihil ducimus recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur porro earum natus veritatis repellendus at exercitationem quod debitis tempora laborum quam provident, quaerat aliquid accusamus repellat quis perspiciatis unde qui!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi eveniet odit expedita assumenda magnam
+                sunt tempore ratione distinctio suscipit itaque fugiat exercitationem eius, cupiditate fugit omnis!
+                Adipisci nihil ducimus recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+                porro earum natus veritatis repellendus at exercitationem quod debitis tempora laborum quam provident,
+                quaerat aliquid accusamus repellat quis perspiciatis unde qui!</p>
+            <button id="menu-btn" class="menu-btn">Start Quiz</button>
         </section>
         <section id="cdm-quiz-container" class="quiz-container">
-            <div class="quiz-image">
-                <!-- <image alt="construction site"></image> -->
+            <div id="feat" class="feature">
+                <button id="exit-btn" class="exit-btn">Exit quiz</button>
+                <span id="score" class="score">Score: 0/20</span>
             </div>
-            <h2 id="cdm-question">What is ..?</h2>
-            <div id="cdm-answers">
-                <button class="btn">Q1</button>
-                <button class="btn">Q2</button>
-                <button class="btn">Q3</button>
-                <button class="btn">Q4</button>
+            <div class="quiz-image"></div>
+            <h4 id="cdm-question"></h4>
+            <div id="cdm-answers"></div>
+            <div id='test' class="group-btn">
+                <button id="next-btn" class="next-btn" >Next</button>
             </div>
         </section>
-        <button id="menu-btn" class="menu-btn">Start Quiz</button>
     </main>
     <footer>
         CCC2023
     </footer>
     <!-- Link to quiz logic JavaScript file-->
     <script src="assets/js/main.js" type="module"></script>
-    <script src="assets/js/questions.js" ></script>
+    <script src="assets/js/questions.js"></script>
 </body>
+
 </html>
