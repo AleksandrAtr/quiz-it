@@ -103,7 +103,7 @@ function checkAnswer(event) {
 
 function showScore(score) {
     scoreWindow.innerHTML = `
-        Score ${score}/${numOfQuestions}
+        Score: ${score} of ${numOfQuestions}
     `
 }
 
