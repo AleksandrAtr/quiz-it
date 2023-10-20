@@ -1,9 +1,6 @@
 //import quiz questions
 import { questions } from './questions.js';
 
-
-let questionIndex;
-let score;
 const start = 'Start';
 const next = 'Next';
 const header = document.getElementById('header');
@@ -11,38 +8,41 @@ const cdmIntro = document.getElementById('cdm-intro');
 const cdmQuizContainer = document.getElementById('cdm-quiz-container');
 const body = document.getElementById('body');
 
-
-const questionsLength = questions.length;
-let menuButton = document.getElementById('menu-btn');
-let quizQuestion = document.getElementById('cdm-question');
-let quizAnswers = document.getElementById('cdm-answers');
+const numOfQuestions = questions.length;
+const startButton = document.getElementById('start-btn');
+const quizQuestion = document.getElementById('cdm-question');
+const quizAnswers = document.getElementById('cdm-answers');
 const answerButtons = document.getElementsByClassName('btn');
 const quizExitButton = document.getElementById('exit-btn');
 const quizNextButton = document.getElementById('next-btn');
+const scoreWindow = document.getElementById('score');
 
 
+let questionNumber;
+let questionIndex;
+let score;
 
 quizExitButton.addEventListener('click', () => {
     window.location.href="../index.html" 
 });
 quizNextButton.addEventListener('click', () => {
-    handleMenuButton(next);
+    buttonsControl(next);
 });
-menuButton.addEventListener('click', startQuiz);
+startButton.addEventListener('click', startQuiz);
 
 
 function resetQuestionContainer() {
-    quizNextButton.style.display = 'none';
     quizQuestion.innerHTML = "";
     quizAnswers.innerHTML = "";
 }
 
 function showQuestion() {
+    quizNextButton.style.display = 'none';
     resetQuestionContainer();
     // declare a constant with assigned value from the questions array (imported from module)
     const currentQuestion = questions[questionIndex]['question'];
     // create a template for the html question element
-    const questionTemplate = `<h2>${currentQuestion}</h2>`;
+    const questionTemplate = `<h2>${questionNumber}. ${currentQuestion}</h2>`;
     // update html question element with current question
     quizQuestion.innerHTML = questionTemplate;
 
@@ -50,9 +50,9 @@ function showQuestion() {
     // declare a constant with assigned value from the questions/answers arrays (imported from module)
     const currentAnswer = questions[questionIndex]['answers'];
     // create possible answers for the current question
-    for (const value in currentAnswer) {
-        let answer = currentAnswer[value]['answer'];
-        let isCorrect = currentAnswer[value]['correct'];
+    for (const index in currentAnswer) {
+        let answer = currentAnswer[index]['answer'];
+        let isCorrect = currentAnswer[index]['correct'];
         //console.log("I am 'correct' in the currentAnswer - ", correct)
         const answerTemplate = `
             <button correct="${isCorrect}" class='btn'>${answer}</button>
@@ -80,24 +80,45 @@ function checkAnswer(event) {
     if (isCorrectAnswer) {
         selectedBtn.classList.add('correct');
         score += 1;
+        showScore(score)
     } else {
         selectedBtn.classList.add('incorrect');
         quizAnswers.querySelector('[correct="true"]').classList.add('correct');
     }
 
     questionIndex += 1;
-    // quizNextButton.disabled = false;
+    questionNumber += 1;
     quizNextButton.style.display = 'block';
+}
+
+
+function showScore(score) {
+    scoreWindow.innerHTML = `
+        Score ${score}/${numOfQuestions}
+    `
+}
+
+function scoreResult(score, numOfQuestions) {
+    let resultFeedback = '';
+    const results = Math.round((score/numOfQuestions)*100);
+    if (results === 100) {
+        resultFeedback = 'Congratulations on your outstanding achievement! Scoring 100% in the quiz is a testament to your dedication and knowledge. Keep up the excellent work!'
+    } else if (results >= 70 && results < 100) {
+        resultFeedback = "Congratulations on completing the quiz! You're doing great, and your effort is commendable. To improve even further, consider reviewing the material in the near future."
+    } else {
+        resultFeedback = "Great job on completing the quiz! It's the first step to excelling yourself. As you scored less than 70%, you should revisit the material as soon as possible to reinforce your regulations understanding. Keep up the good work!"
+    }
+    return resultFeedback;
 }
 
 function showResult() {
     quizNextButton.style.display = 'none';
     resetQuestionContainer();
-    quizAnswers.innerHTML = "Quiz completed. You scored " + score + " out of " + questionsLength;
+    let addFeedback = scoreResult(score, numOfQuestions);
+    quizAnswers.innerHTML = "Quiz completed. You scored " + score + " out of " + numOfQuestions + ".\n" + addFeedback;
 }
 
-function handleMenuButton(type) {
-    // quizNextButton.disabled = true;
+function buttonsControl(type) {
     if (type == start) {
         header.style.display = 'none';
         cdmIntro.style.display = 'none';
@@ -105,17 +126,15 @@ function handleMenuButton(type) {
         showQuestion();
         cdmQuizContainer.style.display = "block";
         body.classList.add("body-image");
-        
-
     } else {
-        if (questionIndex < (questionsLength)) {
+        if (questionIndex < (numOfQuestions)) {
             showQuestion();
         } else { 
             showResult()
-            menuButton.innerHTML = 'Start Again';
-            menuButton.style.display = 'block'
-            menuButton.removeEventListener('click', () => {handleMenuButton(next)})
-            menuButton.addEventListener('click', startQuiz);
+            startButton.innerHTML = 'Start Again';
+            startButton.style.display = 'block'
+            startButton.removeEventListener('click', () => {buttonsControl(next)})
+            startButton.addEventListener('click', startQuiz);
         }
     }
 }
@@ -123,9 +142,12 @@ function handleMenuButton(type) {
 function startQuiz() {
     questionIndex = 0;
     score = 0;
+    questionNumber = questionIndex + 1;
+    showScore(score);
     quizNextButton.style.display = 'none';
-    handleMenuButton(start);
+    buttonsControl(start);
 }
+
 
 
 
