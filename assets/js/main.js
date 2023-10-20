@@ -36,13 +36,22 @@ function resetQuestionContainer() {
     quizAnswers.innerHTML = "";
 }
 
+function startQuiz() {
+    questionIndex = 0;
+    score = 0;
+    questionNumber = questionIndex + 1;
+    showScore(score);
+    quizNextButton.style.display = 'none';
+    buttonsControl(start);
+}
+
 function showQuestion() {
     quizNextButton.style.display = 'none';
     resetQuestionContainer();
     // declare a constant with assigned value from the questions array (imported from module)
     const currentQuestion = questions[questionIndex]['question'];
     // create a template for the html question element
-    const questionTemplate = `<h2>${questionNumber}. ${currentQuestion}</h2>`;
+    const questionTemplate = `${questionNumber}. ${currentQuestion}`;
     // update html question element with current question
     quizQuestion.innerHTML = questionTemplate;
 
@@ -113,6 +122,8 @@ function scoreResult(score, numOfQuestions) {
 
 function showResult() {
     quizNextButton.style.display = 'none';
+    quizQuestion.style.display = 'none';
+
     resetQuestionContainer();
     let addFeedback = scoreResult(score, numOfQuestions);
     quizAnswers.innerHTML = "Quiz completed. You scored " + score + " out of " + numOfQuestions + ".\n" + addFeedback;
@@ -139,14 +150,7 @@ function buttonsControl(type) {
     }
 }
 
-function startQuiz() {
-    questionIndex = 0;
-    score = 0;
-    questionNumber = questionIndex + 1;
-    showScore(score);
-    quizNextButton.style.display = 'none';
-    buttonsControl(start);
-}
+
 
 
 
