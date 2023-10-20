@@ -19,7 +19,9 @@ export const questions = [
                 correct: false
             }
         ]
-    },
+    }]
+    /*
+    ,
     {
         question: "What does CDM stand for in CDM 2015?",
         answers: [
@@ -213,3 +215,4 @@ export const questions = [
 
 
 
+*/
