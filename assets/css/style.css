@@ -31,10 +31,9 @@ h1 {
   color: #004466;
 }
 
-h4 {
-  padding: 5px;
+h3 {
+  padding: 10px;
   border-top: solid 1px #004466;
-  border-bottom: solid 1px #004466;
 }
 
 /* --------------------------------------------Page hero-section styling */
@@ -95,6 +94,7 @@ h4 {
 }
 
 #cdm-answers {
+  border-top: solid 1px #004466;
   padding: 10px;
 }
 
@@ -242,15 +242,19 @@ button {
 /* --------------------------------------------- Navigation bar RESPONSIVE design */
 @media all and (max-width: 600px) {
   h1 {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
 
   .hero-container {
     margin-top: -8em;
   }
 
+  h3 {
+    font-size: 1.25em;
+  }
+
   h2 {
-    font-size: 1.1em;
+    font-size: 1.35em;
   }
 
   .quiz-container {
@@ -269,4 +273,9 @@ button {
     padding: 5px;
     font-size: 0.8em;
   }
+
+  .hero-container {
+    max-width: 300px;
+  }
 }
+
