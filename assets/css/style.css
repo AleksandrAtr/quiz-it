@@ -36,11 +36,7 @@ h3 {
   border-top: solid 1px #004466;
 }
 
-/* --------------------------------------------Page hero-section styling */
-
-.body-image {
-  background-color: #004466;
-}
+/* -------------------------------------------Page hero-section styling */
 
 .hero-image {
   height: 250px;
@@ -70,6 +66,10 @@ h3 {
 }
 
 /* --------------------------------------------Page main styling */
+
+.body-image {
+  background-color: #004466;
+}
 
 .quiz-container {
   width: 100%;
@@ -118,9 +118,11 @@ button {
   font-family: 'Roboto Slab', serif;
   font-size: 1.1em;
   color: #004466;
+  cursor: default;
+  user-select: none;
 }
 
-/*  ============= ANSWERS buttons styles */
+/*  ============= ANSWER buttons styles */
 .btn {
   display: block;
   text-align: left;
@@ -165,27 +167,6 @@ button {
   color: #eeeaea;
 }
 
-/*  ============= EXIT button styling */
-.exit-btn {
-  display: block;
-  text-align: center;
-  border: 2px solid #004466;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  width: 100px;
-  transition: 0.3s;
-  background-color: #f8fafc;
-  margin-top: 5x;
-  margin-bottom: 10px;
-  color: #004466;
-}
-
-/*  ============= EXIT button hover */
-.exit-btn:hover {
-  background-color: #004466;
-  color:  #eeeaea;
-}
-
 /*  ============= NEXT button hover (Disable true/false) */
 .next-btn:hover:not([disabled]) {
   background-color: #004466;
@@ -197,13 +178,33 @@ button {
   cursor: not-allowed;
 }
 
+/*  ============= EXIT button styling */
+.exit-btn {
+  display: block;
+  text-align: center;
+  border: 2px solid #004466;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  width: 100px;
+  transition: 0.3s;
+  background-color: #f8fafc;
+  margin-bottom: 10px;
+  color: #004466;
+}
+
+/*  ============= EXIT button hover */
+.exit-btn:hover {
+  background-color: #004466;
+  color:  #eeeaea;
+}
+
 /* Quiz (NEXT) button style container */
 .group-btn {
   display: flex;
   justify-content: space-around;
 }
 
-/* Correct answer styles */
+/* Correct/Incorrect answer styles */
 .correct {
   color: black;
   border: solid 2px #009f82;
@@ -211,7 +212,6 @@ button {
 }
 
 .incorrect {
-  /* boundary: red; */
   border: solid 2px red;
   color: red;
 }
@@ -233,7 +233,6 @@ button {
   background-color: #004466;
   margin-bottom: 10px;
   padding: 10px;
-  /* min-width: 100px; */
   border-radius: 2px;
 }
 
