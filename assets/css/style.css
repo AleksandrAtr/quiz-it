@@ -36,6 +36,14 @@ h3 {
   border-top: solid 1px #004466;
 }
 
+a {
+  text-decoration: none;
+  color: inherit; 
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
 /* -------------------------------------------Page hero-section styling */
 
 .hero-image {

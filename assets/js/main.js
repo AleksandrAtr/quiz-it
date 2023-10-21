@@ -22,10 +22,10 @@ let questionNumber;
 let questionIndex;
 let score;
 
-quizExitButton.addEventListener("click", () => {
-    // window.location.href = "../index.html";
-    window.location.href = "@Url.Action("Index", "ControllerName")";
-});
+// quizExitButton.addEventListener("click", () => {
+//     window.location.href = "../index.html";
+// });
+
 quizNextButton.addEventListener("click", () => {
     buttonsControl(next);
 });
