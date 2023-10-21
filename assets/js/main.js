@@ -23,7 +23,8 @@ let questionIndex;
 let score;
 
 quizExitButton.addEventListener("click", () => {
-    window.location.href = "../quiz-it";
+    // window.location.href = "../index.html";
+    window.location.href = "@Url.Action("Index", "ControllerName")";
 });
 quizNextButton.addEventListener("click", () => {
     buttonsControl(next);
