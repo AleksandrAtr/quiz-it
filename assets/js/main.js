@@ -23,7 +23,7 @@ let questionIndex;
 let score;
 
 quizExitButton.addEventListener("click", () => {
-    window.location.href = "../index.html";
+    window.location.href = "../quiz-it";
 });
 quizNextButton.addEventListener("click", () => {
     buttonsControl(next);
