@@ -1,14 +1,17 @@
-//import quiz questions
+    //import quiz questions
 import { questions } from "./questions.js";
 
 const start = "Start";
 const next = "Next";
+const numOfQuestions = questions.length;
+let questionNumber;
+let questionIndex;
+let score;
+
 const header = document.getElementById("header");
 const cdmIntro = document.getElementById("cdm-intro");
 const cdmQuizContainer = document.getElementById("cdm-quiz-container");
 const body = document.getElementById("body");
-
-const numOfQuestions = questions.length;
 const startButton = document.getElementById("start-btn");
 const quizQuestion = document.getElementById("cdm-question");
 const quizAnswers = document.getElementById("cdm-answers");
@@ -17,26 +20,19 @@ const quizExitButton = document.getElementById("exit-btn");
 const quizNextButton = document.getElementById("next-btn");
 const scoreWindow = document.getElementById("score");
 
-
-let questionNumber;
-let questionIndex;
-let score;
-
-// quizExitButton.addEventListener("click", () => {
-//     window.location.href = "../index.html";
-// });
-
+    // set event listeners
 quizNextButton.addEventListener("click", () => {
     buttonsControl(next);
 });
 startButton.addEventListener("click", startQuiz);
 
-
+    // Quiz container text content reset
 function resetQuestionContainer() {
     quizQuestion.innerHTML = "";
     quizAnswers.innerHTML = "";
 }
 
+    // Start quiz 
 function startQuiz() {
     questionIndex = 0;
     score = 0;
@@ -46,19 +42,37 @@ function startQuiz() {
     buttonsControl(start);
 }
 
+    //START and NEXT button controls
+function buttonsControl(type) {
+    if (type == start) {
+        header.style.display = "none";
+        cdmIntro.style.display = "none";
+
+        showQuestion();
+        cdmQuizContainer.style.display = "block";
+        body.classList.add("body-image");
+    } else {
+        if (questionIndex < (numOfQuestions)) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
+}
+
 function showQuestion() {
     quizNextButton.style.display = "none";
     resetQuestionContainer();
-    // declare a constant with assigned value from the questions array (imported from module)
+        // declare a constant with assigned value from the questions array (imported from module)
     const currentQuestion = questions[questionIndex].question;
-    // create a template for the html question element
+        // create a template for the html question element
     const questionTemplate = `${questionNumber}. ${currentQuestion}`;
-    // update html question element with current question
+        // update html question element with current question
     quizQuestion.innerHTML = questionTemplate;
     showAnswers();
 }
 
-    // declare a constant with assigned value from the questions/answers arrays (imported from module)
+    // gets questions arrays (imported from module) 
 function showAnswers() {
     const currentAnswer = questions[questionIndex].answers;
     // create possible answers for the current question
@@ -73,7 +87,7 @@ function showAnswers() {
     applyEventListener();
 }
 
-
+    // Answer buttons event listeners
 function applyEventListener() {
     const answerButtons = document.getElementsByClassName("btn");
     for (let i = 0; i < answerButtons.length; i++) {
@@ -81,7 +95,7 @@ function applyEventListener() {
     }
 }
 
-// Provides user selected answer button response
+    // Provides user selected answer button response
 function answerBtnControl(event) {
     const selectedBtn = event.target;
     checkAnswer(selectedBtn);
@@ -91,14 +105,14 @@ function answerBtnControl(event) {
     quizNextButton.style.display = "block";
 }
 
-//disable answer buttons after user selecting the answer
+    //disable answer buttons after user selecting the answer
 function disableButton() {
-    // disable answer buttons 
+        // disable answer buttons 
     const array = Array.prototype.slice.call(answerButtons);
     array.forEach(button => { button.disabled = true; });
     
 }
-
+    // Checks selected answer
 function checkAnswer(selectedBtn) {
     const isCorrectAnswer = selectedBtn.getAttribute("correct") === "true";
 
@@ -112,7 +126,7 @@ function checkAnswer(selectedBtn) {
     }
 }
 
-
+    // Display score function
 function showScore(score) {
     scoreWindow.innerHTML = `
         Score: ${score} of ${numOfQuestions}
@@ -123,7 +137,7 @@ function scoreResult(score, numOfQuestions) {
     let resultFeedback = "";
     const results = Math.round((score / numOfQuestions) * 100);
     if (results >= 90) {
-        resultFeedback = "Congratulations on your outstanding achievement! The acieved score is a testament to your dedication and knowledge. Keep up the excellent work!";
+        resultFeedback = "Congratulations on your outstanding achievement! The achieved score is a testament to your dedication and knowledge. Keep up the excellent work!";
     } else if (results >= 70 && results < 90) {
         resultFeedback = "Congratulations on completing the quiz! You're doing great, and your effort is commendable. To improve even further, consider reviewing the material in the near future.";
     } else {
@@ -141,22 +155,7 @@ function showResult() {
     quizAnswers.innerHTML = "Quiz completed. You scored " + score + " out of " + numOfQuestions + ".\n" + addFeedback;
 }
 
-function buttonsControl(type) {
-    if (type == start) {
-        header.style.display = "none";
-        cdmIntro.style.display = "none";
 
-        showQuestion();
-        cdmQuizContainer.style.display = "block";
-        body.classList.add("body-image");
-    } else {
-        if (questionIndex < (numOfQuestions)) {
-            showQuestion();
-        } else {
-            showResult();
-        }
-    }
-}
 
 
 
