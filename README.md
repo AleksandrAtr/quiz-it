@@ -2,7 +2,7 @@
 
 [Quiz it](https://aleksandratr.github.io/quiz-it/) is a web application designed to assess and ensure compliance with Construction Design Management Regulations 2015. <br>
 
-![site on different devices](assets/images/readme/responsive.PNG)
+![site on different devices](assets/images/readme/responsive.png)
 <br>
  
 ## **Table of contents**
@@ -127,25 +127,25 @@ Hero section features:
 - The heading provides the subject's name.
 - Additional information includes the author's name and the webpage material publish date.
 
-Desktop view - <br> ![](assets/images/readme/desktop-home-hero.PNG)
+Desktop view - <br> ![](assets/images/readme/desktop-home-hero.png)
 Mobile device view - <br>
-![](assets/images/readme/mob-home-hero.PNG)
+![](assets/images/readme/mob-home-hero.png)
 
 A website's central section:
 - Provides additional information about the subject and informs about the quiz objective.
 - Provides a button that invokes quiz.
 
-Desktop view - <br> ![](assets/images/readme/desktop-home-main.PNG)
-Mobile device view - <br> ![](assets/images/readme/mob-home-main-sec.PNG)
+Desktop view - <br> ![](assets/images/readme/desktop-home-main.png)
+Mobile device view - <br> ![](assets/images/readme/mob-home-main-sec.png)
 
  The footer is at the bottom of the screen and is designed to display copyright information. It also serves as a placeholder for additional information in future updates.
 
 The footer features:
 - Copyright information
 
-Desktop view - <br> ![](assets/images/readme/desktop-home-footer.PNG)
+Desktop view - <br> ![](assets/images/readme/desktop-home-footer.png)
 Mobile device view - <br>
-![](assets/images/readme/mob-home-footer.PNG)
+![](assets/images/readme/mob-home-footer.png)
 
 ### **Quiz window**
 The Quiz window displays the Quiz question multiple choice answers, a window with current score and a total question number.
@@ -167,13 +167,13 @@ The Quiz window features:
     - The Next button will appear.
 - The Next button allows you to move to the next question if there are still questions in the list. If all questions are answered, the Next button will take you to the result page, where test result feedback will be provided.
 
-Desktop view Quiz window - <br> ![](assets/images/readme/desktop-quiz-main.PNG)
+Desktop view Quiz window - <br> ![](assets/images/readme/desktop-quiz-main.png)
 
-Desktop view Quiz feedback - <br> ![](assets/images/readme/desktop-quiz-feedback.PNG)
+Desktop view Quiz feedback - <br> ![](assets/images/readme/desktop-quiz-feedback.png)
 
-Mobile view Quiz window - <br> ![](assets/images/readme/mob-quiz-main.PNG)
+Mobile view Quiz window - <br> ![](assets/images/readme/mob-quiz-main.png)
 
-Mobile view Quiz feedback  - <br> ![](assets/images/readme/mob-quiz-feedback.PNG)
+Mobile view Quiz feedback  - <br> ![](assets/images/readme/mob-quiz-feedback.png)
  
 ## **Testing Phase**
 
@@ -214,28 +214,28 @@ The web application has been designed and built to be responsive to cater to var
 Tests were undertaken in the Chrome browser (by Google) using in-built developer tools. The date of the test is 22/10/2023.
 
 Results summary:<br>
-![](assets/images/readme/responsive-test.PNG)
+![](assets/images/readme/responsive-test.png)
 
 #### Home page<br>
 Desktop (1300px wide screen) <br>
-![](assets/images/readme/resp-test-1300px.PNG)
+![](assets/images/readme/resp-test-1300px.png)
 
 Mobile device (320px wide screen) <br>
-![](assets/images/readme/resp-test-320px.PNG)
+![](assets/images/readme/resp-test-320px.png)
 
 #### Quiz window<br>
 Desktop (1300px wide screen) <br>
-![](assets/images/readme/resp-test-1300px-quiz.PNG)
+![](assets/images/readme/resp-test-1300px-quiz.png)
 
 Mobile device (320px wide screen) <br>
-![](assets/images/readme/resp-test-320px-quiz.PNG)
+![](assets/images/readme/resp-test-320px-quiz.png)
 
 #### Feedback window<br>
 Desktop (1300px wide screen) <br>
-![](assets/images/readme/resp-test-1300px-quiz-feedback.PNG
+![](assets/images/readme/resp-test-1300px-quiz-feedback.png
 
 Mobile device (320px wide screen) <br>
-![](assets/images/readme/resp-test-320px-quiz-feedback.PNG)
+![](assets/images/readme/resp-test-320px-quiz-feedback.png)
 
 
 ## **Browser compatibility test results - Manual testing**
@@ -363,10 +363,10 @@ The date of the test is 22/10/2023. The results are as follows:
 <br> 
 
 Desktop (1300px wide screen) <br>
-![](assets/images/readme/lighthouse-desktop.PNG)
+![](assets/images/readme/lighthouse-desktop.png)
 
 Mobile device (320px wide screen) <br>
-![](assets/images/readme/lighthouse-mob.PNG)
+![](assets/images/readme/lighthouse-mob.png)
 
 #### **HTML validator test**
 The website has been checked in W3C HTML Validator. It is a free online tool to verify HTML document syntax and compliance with W3C specifications and standards. 
@@ -406,7 +406,7 @@ All the features were tested as part of the responsive and web browser compatibi
 #### **Business owner and User stories tests**
 The website has been checked against business and user stories. The results are as follows: 
 <br>
-![](assets/images/readme/business-story-tests.PNG)
+![](assets/images/readme/business-story-tests.png)
 <br>
 
 ## **Deployment**
@@ -435,7 +435,7 @@ The following tools have been used during the development:
 - Windows 10 Enterprise
 - Chrome, Safari, Edge browsers
 - Microsoft Snipping tool
-- TinyPNG website
+- Tinypng website
 - Coolors website
 - Goodnotes app
  
