@@ -384,8 +384,6 @@ The date of the test is 22/10/2023. The results are as follows:
 ![](assets/images/readme/html-home-products.png)
 <br>
 
-
-
 #### **CSS validator test**
 The website has been checked using CSS validation service, which verifies web developers' CSS code against W3C specifications, ensuring consistent and correct application across different browsers and devices and ensuring valid syntax and standards.
 
@@ -399,6 +397,21 @@ The date of the test is 22/10/2023. The results are as follows: <br>
 
 ![](assets/images/readme/css-validator.png)
 <br>
+
+#### **JSHint validator**
+The website has been checked using JavaScript validator service, highlighting suspicious usage in JavaScript programs.
+
+The test procedures are as follows:
+- Open JSHint validator.
+- Load the required JavaScript file.
+- Undertake check.
+- Report the results
+
+The date of the test is 22/10/2023 - no errors have been found <br>
+
+![](assets/images/readme/jshint-validator.png)
+<br>
+
 
 #### **Features test**
 All the features were tested as part of the responsive and web browser compatibility tests - no issues to report.
@@ -455,8 +468,6 @@ http://jsfiddle.net/a3nyexqg/
 - Understanding of the problems encountered during development was taken from the StackOverflow website. One of the problems encountered during the development was that the event listener did not overwrite the button functionality after defining it in the line below the original definition. I found in StackOverflow that the event listener cannot be overwritten but needs to be removed using the remove and add methods to redefine the new event listener to the same button. - https://stackoverflow.com/questions/50370156/overriding-the-event-listener-in-javascript
 - Some inspiration comes from the quiz app development video found on YouTube- https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1808s
 
-
-The project has been developed using VS Code, Git and GitHub. A new GitHub account has been created for the Code Institute course, and all except one commit for the project have been done using the same Git account.
 
 Personal appreciation:
 
