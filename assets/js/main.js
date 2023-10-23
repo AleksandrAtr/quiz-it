@@ -1,6 +1,7 @@
     //import quiz questions
 import { questions } from "./questions.js";
 
+    // 
 const start = "Start";
 const next = "Next";
 const numOfQuestions = questions.length;
@@ -8,6 +9,7 @@ let questionNumber;
 let questionIndex;
 let score;
 
+    // selecting html elements used in the quiz logic
 const header = document.getElementById("header");
 const cdmIntro = document.getElementById("cdm-intro");
 const cdmQuizContainer = document.getElementById("cdm-quiz-container");
@@ -25,6 +27,9 @@ quizNextButton.addEventListener("click", () => {
     buttonsControl(next);
 });
 startButton.addEventListener("click", startQuiz);
+
+quizExitButton.addEventListener("click", () => {
+    window.location.href = "../../index.html";})
 
     // Quiz container text content reset
 function resetQuestionContainer() {
