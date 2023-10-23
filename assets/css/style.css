@@ -37,11 +37,15 @@ h3 {
 }
 
 a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-decoration: none;
-  color: inherit; 
-  font-family: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.1em;
+  cursor: default;
+  -webkit-user-select: none; /* Safari */
+  user-select: none;
 }
 
 /* -------------------------------------------Page hero-section styling */
@@ -126,8 +130,8 @@ button {
   font-size: 1.1em;
   color: #004466;
   cursor: default;
-  user-select: none;
   -webkit-user-select: none; /* Safari */
+  user-select: none;
 }
 
 /*  ============= ANSWER buttons styles */
@@ -187,7 +191,6 @@ button {
 
 /*  ============= EXIT button styling */
 .exit-btn {
-  display: block;
   text-align: center;
   border: 2px solid #004466;
   border-radius: 5px;
@@ -241,6 +244,17 @@ button {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 2px;
+}
+
+/* --------------------------------------------404 page styles */
+.error {
+  text-align: center;
+}
+
+.error a {
+  margin-top: 15px;
+  padding: 5px;
+  border: solid;
 }
 
 /* --------------------------------------------Media Query Styles */
