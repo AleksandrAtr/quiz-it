@@ -18,7 +18,6 @@ const startButton = document.getElementById("start-btn");
 const quizQuestion = document.getElementById("cdm-question");
 const quizAnswers = document.getElementById("cdm-answers");
 const answerButtons = document.getElementsByClassName("btn");
-const quizExitButton = document.getElementById("exit-btn");
 const quizNextButton = document.getElementById("next-btn");
 const scoreWindow = document.getElementById("score");
 
@@ -27,9 +26,6 @@ quizNextButton.addEventListener("click", () => {
     buttonsControl(next);
 });
 startButton.addEventListener("click", startQuiz);
-
-quizExitButton.addEventListener("click", () => {
-    window.location.href = "../../index.html";})
 
     // Quiz container text content reset
 function resetQuestionContainer() {
