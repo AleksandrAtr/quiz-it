@@ -45,7 +45,6 @@ a {
 }
 
 /* -------------------------------------------Page hero-section styling */
-
 .hero-image {
   height: 250px;
   width: 100%;
@@ -128,6 +127,7 @@ button {
   color: #004466;
   cursor: default;
   user-select: none;
+  -webkit-user-select: none; /* Safari */
 }
 
 /*  ============= ANSWER buttons styles */
@@ -169,7 +169,6 @@ button {
 }
 
 /*  ============= START QUIZ button hover */
-
 .start-btn:hover {
   background-color: #004466;
   color: #eeeaea;
@@ -246,7 +245,6 @@ button {
 
 /* --------------------------------------------Media Query Styles */
 /* RESPONSIVE design section------------------------------------------------------*/
-/* --------------------------------------------- Navigation bar RESPONSIVE design */
 @media all and (max-width: 600px) {
   h1 {
     font-size: 1.6em;

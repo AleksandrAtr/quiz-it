@@ -1,7 +1,7 @@
     //import quiz questions
 import { questions } from "./questions.js";
 
-    // 
+    // declare variables used in the quiz logic
 const start = "Start";
 const next = "Next";
 const numOfQuestions = questions.length;
@@ -48,7 +48,6 @@ function buttonsControl(type) {
     if (type == start) {
         header.style.display = "none";
         cdmIntro.style.display = "none";
-
         showQuestion();
         cdmQuizContainer.style.display = "block";
         body.classList.add("body-image");
@@ -60,7 +59,7 @@ function buttonsControl(type) {
         }
     }
 }
-
+    // function generates questions taken from the questions list
 function showQuestion() {
     quizNextButton.style.display = "none";
     resetQuestionContainer();
@@ -133,7 +132,7 @@ function showScore(score) {
         Score: ${score} of ${numOfQuestions}
     `;
 }
-
+    // final feedback on the test result
 function scoreResult(score, numOfQuestions) {
     let resultFeedback = "";
     const results = Math.round((score / numOfQuestions) * 100);
@@ -147,7 +146,9 @@ function scoreResult(score, numOfQuestions) {
     return resultFeedback;
 }
 
+    // show results function at the end of the Quiz
 function showResult() {
+        // hide elements that are not required on the feedback window
     quizNextButton.style.display = "none";
     quizQuestion.style.display = "none";
 
